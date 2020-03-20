@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
+
 from Login.login import check_user
+from Registration.registration import register_user
 
 app = Flask(__name__)
 
@@ -20,6 +22,27 @@ def login():
     
     # return user data
     return "success"
+
+@app.route("/users", methods=['POST'])
+def registerUser():
+
+    print(request.args)
+
+    username = request.json['username']
+    password = request.json['password']
+    email = request.json["email"]
+    state = request.json['state']
+
+
+    if register_user(username, password, email, state):
+        return {
+            "success": "true"
+        }
+    else:
+        return  {
+            "success": "false"
+        }
+
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
