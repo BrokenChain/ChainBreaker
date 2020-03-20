@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 
 from Login.login import check_user
 from Registration.registration import register_user
+from Getter.getUser import get_user_by_username
 
 app = Flask(__name__)
 
@@ -19,10 +20,13 @@ def login():
     password = request.form['password']
 
     if not check_user(username, password):
-        return "fail"
+        # return code fail
+        return {
+            "success": "false"
+        }
 
     # return user data
-    return "success"
+    return get_user_by_username(username)
 
 
 @app.route("/users", methods=['POST'])

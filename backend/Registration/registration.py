@@ -3,6 +3,7 @@ import csv
 
 users_file = 'backend/Registration/users_data.csv'
 
+
 def register_user(username, password, email, state):
     users = []
     with open(users_file, 'r') as csvfile:
@@ -13,7 +14,6 @@ def register_user(username, password, email, state):
 
     print("users")
     print(users)
-
 
     if len(users) == 0:
         print("len 0")
