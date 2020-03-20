@@ -1,1 +1,5 @@
 .idea/
+
+backend/Login/__pycache__ 
+
+backend/.idea

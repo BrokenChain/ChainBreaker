@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    Hola
+
+    User Login
+
+    <form action = "http://localhost:5000/login" method = "POST" 
+			enctype = "multipart/form-data">
+				<input type = "text" name = "username" />
+				<input type = "text" name = "password" />
+				<input type = "submit"/>
+	</form>
+
+</body>
+</html>
