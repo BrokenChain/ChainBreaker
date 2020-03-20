@@ -3,13 +3,17 @@ from flask import Flask, render_template, request
 from Login.login import check_user
 from Registration.registration import register_user
 from Getter.getUser import get_user_by_username
+from Heatmap.heatmap import get_heatmap_data
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    return {
+        'success': 'true',
+        'heatmap': get_heatmap_data()
+    }
 
 
 @app.route("/login", methods=['POST'])
@@ -26,7 +30,13 @@ def login():
         }
 
     # return user data
-    return get_user_by_username(username)
+
+    data = {
+        'success': 'true',
+        'heatmap': get_heatmap_data(),
+        'userinfo': get_user_by_username(username)
+    }
+    return data
 
 
 @app.route("/users", methods=['POST'])
