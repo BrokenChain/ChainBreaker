@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "hey"
+    return "Kann wer ein cooles Icon erstellen?"
 
 if __name__ == '__main__':
     app.run()
