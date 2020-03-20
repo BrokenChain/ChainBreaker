@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, request
 
 from Login.login import check_user
 from Registration.registration import register_user
@@ -14,7 +14,6 @@ def home():
         'success': 'true',
         'heatmap': get_heatmap_data()
     }
-
 
 @app.route("/login", methods=['POST'])
 def login():
