@@ -4,6 +4,7 @@ from Login.login import check_user
 from Registration.registration import register_user
 from Getter.getUser import get_user_by_username
 from Heatmap.heatmap import get_heatmap_data
+from Profile.profile_controller import profile_data
 
 app = Flask(__name__)
 
@@ -56,6 +57,13 @@ def registerUser():
             "success": "false"
         }
 
+
+@app.route("/profile")
+def user_profile():
+    
+    username = request.json['username']
+
+    return profile_data(username)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
