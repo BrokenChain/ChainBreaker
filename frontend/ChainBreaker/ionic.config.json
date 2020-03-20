@@ -1,0 +1,7 @@
+{
+  "name": "ChainBreaker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
