@@ -10,7 +10,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return get_heatmap_data()
+    return {
+        'success': 'true',
+        'heatmap': get_heatmap_data()
+    }
 
 
 @app.route("/login", methods=['POST'])
@@ -28,7 +31,11 @@ def login():
 
     # return user data
 
-    data = {'heatmap': get_heatmap_data(), 'userinfo': get_user_by_username(username)}
+    data = {
+        'success': 'true',
+        'heatmap': get_heatmap_data(),
+        'userinfo': get_user_by_username(username)
+    }
     return data
 
 
