@@ -1,7 +1,5 @@
 {
-  "name": "ChainBreaker",
-  "integrations": {
-    "capacitor": {}
-  },
+  "name": "frontend",
+  "integrations": {},
   "type": "angular"
 }
