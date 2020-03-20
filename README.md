@@ -1,1 +1,3 @@
-<h1>Hallo</h1>
+Backend: Python Flask
+
+Frontend: Ionic Angular
