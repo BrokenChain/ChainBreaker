@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import * as Vis from './map_vis';
+import {NavController} from "@ionic/angular";
 
 @Component({
   selector: 'app-main',
@@ -34,7 +35,7 @@ export class MainPage implements OnInit {
   pie: any;
   line: any;
   colorArray: any;
-  constructor() {
+  constructor(public navCtrl: NavController) {
     this.homeStayNo = 30212;
     this.homeOfficeNo = 10231;
     this.btnDisabled = false;
@@ -49,7 +50,7 @@ export class MainPage implements OnInit {
     this.homeless = true;
   }
 
-  ngOnInit() {  }
+  ngOnInit() { }
 
   ionViewDidEnter() {
     Vis.draw();
@@ -194,4 +195,9 @@ export class MainPage implements OnInit {
     this.eldery = true;
     this.homeless = true;
   }
+
+  logout()  {
+    this.navCtrl.navigateForward('login');
+  }
 }
+

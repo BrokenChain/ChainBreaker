@@ -2,13 +2,22 @@
   <!--  our side menu  -->
   <ion-menu contentId="main">
     <ion-item class="profile-item">
-      <div class="avatar">
-        <img src="../../assets/imgs/profile-pictures/girl2.png">
-      </div>
-      <div class="profile_info">
-        <h3>Julie</h3>
-        1980 P.
-      </div>
+      <ion-col>
+        <div class="avatar">
+          <img src="../../assets/imgs/profile-pictures/girl2.png">
+        </div>
+        <div class="profile_info">
+          <h3>Julie</h3>
+          1980 P.
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="ion-text-end logout-button">
+          <ion-button (click)="logout()" fill="clear">
+            <ion-icon name="log-out" class="logout-icon"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
     </ion-item>
 
     <!-- widgets -->
