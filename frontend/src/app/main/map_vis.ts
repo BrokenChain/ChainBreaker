@@ -2,8 +2,6 @@
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from '@amcharts/amcharts4/maps';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
-am4core.useTheme(am4themes_animated);
-
 
 export function draw() {
 
@@ -13,7 +11,6 @@ export function draw() {
 
     // Create map instance
     let chart = am4core.create('chartdiv', am4maps.MapChart);
-
     chart.titles.create().text = title;
 
     // Set map definition
@@ -42,7 +39,7 @@ export function draw() {
     polygonSeries.heatRules.push({
         property: 'fill',
         target: polygonSeries.mapPolygons.template,
-        min: chart.colors.getIndex(1).brighten(1),
+        min: chart.colors.getIndex(17).brighten(1),
         max: chart.colors.getIndex(1).brighten(-0.3)
     });
 
@@ -82,6 +79,8 @@ export function draw() {
     // Create hover state and set alternative fill color
     let hs = polygonTemplate.states.create('hover');
     hs.properties.fill = chart.colors.getIndex(1).brighten(-0.5);
-
+    chart.homeGeoPoint = {
+        latitude: -90,
+        longitude: 40,
+    };
 }
-

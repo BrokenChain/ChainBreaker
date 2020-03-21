@@ -27,7 +27,7 @@ export class MainPage implements OnInit {
   colorArray: any;
   constructor() {
     this.homeStayNo = 30212;
-    this.homeOfficeNo = 10.231;
+    this.homeOfficeNo = 10231;
     this.btnDisabled = false;
     this.hide1 = false;
     this.hide2 = true;
@@ -56,7 +56,6 @@ export class MainPage implements OnInit {
 
   incrementHomeStay() {
     this.homeStayNo++;
-    //this.homeStay.innerHtml = '30.213';
     this.btnDisabled = true;
   }
 
@@ -137,7 +136,6 @@ export class MainPage implements OnInit {
       this.hide1 = true;
       this.hide2 = true;
       this.hide3 = false;
-      console.log("Show Profile!");
     }
   }
 }
