@@ -4,10 +4,6 @@ import * as am4maps from '@amcharts/amcharts4/maps';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 
 export function draw() {
-
-    // calculate which map to be used
-    let currentMap = 'germanyLow';
-
     // Create map instance
     let chart = am4core.create('chartdiv', am4maps.MapChart);
 

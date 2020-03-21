@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import * as Vis from './map_vis';
-import { menuController } from '@ionic/core';
-
 
 @Component({
   selector: 'app-main',
@@ -44,9 +42,10 @@ export class MainPage implements OnInit {
     this.hideSportFeed = true;
   }
 
-  ngOnInit() { Vis.draw(); }
+  ngOnInit() { ; }
 
   ionViewDidEnter() {
+    Vis.draw()
     this.createLineChart();
     this.createPieChart();
   }
