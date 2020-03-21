@@ -4,11 +4,16 @@ users_file = 'backend/Registration/users_data.csv'
 
 
 def get_users_with_points():
-    table = {}
+    table = []
     data = pandas.read_csv(users_file)
 
     for index, row in data.iterrows():
-        table[row['username']] = row['points']
+        user = {
+            'username': row['username'],
+            'state': row['state'],
+            'points': row['points']
+        }
+        table.append(user)
 
     return {
         "success": "true",

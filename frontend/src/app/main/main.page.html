@@ -3,11 +3,11 @@
   <ion-menu contentId="main">
     <ion-item class="profile-item">
       <div class="avatar">
-        <img src="../../assets/imgs/snoop_dog.jpg">
+        <img src="../../assets/imgs/profile-pictures/girl2.png">
       </div>
       <div class="profile_info">
-        <h3>Snoop Dog</h3>
-        3000 pts.
+        <h3>julie</h3>
+        1980 P.
       </div>
     </ion-item>
 
@@ -51,7 +51,11 @@
           <p>How do you working?</p> 
         </div>
       </div>
-    </div> 
+    </div>
+
+    <ion-content *ngIf="!this.hide3">
+      <app-ranking></app-ranking>
+    </ion-content>
 
     <ion-row>
       <ion-col col-4>
@@ -74,7 +78,7 @@
         <ion-card button="true" (click)="showRanking()">
           <ion-card-content>
             <ion-icon name="stats-chart-outline"></ion-icon>
-            Ranks
+            Ranking
           </ion-card-content>
         </ion-card>
       </ion-col>
