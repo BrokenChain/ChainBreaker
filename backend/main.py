@@ -1,4 +1,5 @@
 from flask import Flask, request
+from flask_cors import CORS, cross_origin
 
 from Login.login import check_user
 from Registration.registration import register_user
@@ -6,7 +7,7 @@ from Getter.getUser import get_user_by_username
 from Heatmap.heatmap import get_heatmap_data
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route("/")
 def home():
@@ -16,11 +17,12 @@ def home():
     }
 
 @app.route("/login", methods=['POST'])
+@cross_origin()
 def login():
     print(request.args)
 
-    username = request.form['username']
-    password = request.form['password']
+    username = request.json['username']
+    password = request.json['password']
 
     if not check_user(username, password):
         # return code fail
