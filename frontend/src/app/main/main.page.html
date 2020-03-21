@@ -12,7 +12,7 @@
     </ion-item>
 
     <!-- widgets -->
-    <ion-content style="white-space: nowrap">
+    <ion-content>
       <div class="statistics">
         <h2>Personal Statistics</h2>
         <canvas #lineChart></canvas>
@@ -51,9 +51,28 @@
   </ion-menu>
 
   <!-- the main content -->
+  <div id="chartdiv" class="map"></div>
   <ion-router-outlet id="main">
     <ion-card class="news">
-      <img src="../../assets/imgs/munich.jpg" />
+      <ion-row>
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>30.212</ion-card-title>
+              <ion-card-subtitle>Zu Hause</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+
+        <ion-col col-4>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>30.212</ion-card-title>
+              <ion-card-subtitle>Zu Hause</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
       <ion-card-header>
         <ion-card-subtitle>News</ion-card-subtitle>
         <ion-card-title>Current stats</ion-card-title>
@@ -63,4 +82,6 @@
       </ion-card-content>
     </ion-card>
   </ion-router-outlet>
+
 </ion-split-pane>
+

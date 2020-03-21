@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
+import * as Vis from './map_vis';
 
 @Component({
   selector: 'app-main',
@@ -7,8 +8,8 @@ import { Chart } from 'chart.js';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-  @ViewChild('lineChart') lineChart;
-  @ViewChild('pieChart') pieChart;
+  @ViewChild('lineChart', null) lineChart;
+  @ViewChild('pieChart', null) pieChart;
 
   state: any; // flags for displaying according page: 1: stats, 2: sociol, 3: profile
   hide1: boolean;
@@ -24,7 +25,7 @@ export class MainPage implements OnInit {
     this.hide3 = true;
   }
 
-  ngOnInit() {}
+  ngOnInit() { Vis.draw(); }
 
   ionViewDidEnter() {
     this.createLineChart();

@@ -13,6 +13,8 @@
   },
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts4": "^4.9.10",
+    "@amcharts/amcharts4-geodata": "^4.1.12",
     "@angular/common": "~8.2.14",
     "@angular/core": "~8.2.14",
     "@angular/forms": "~8.2.14",
@@ -25,6 +27,7 @@
     "@ionic/angular": "^5.0.0",
     "chart.js": "^2.9.3",
     "core-js": "^2.5.4",
+    "d3": "^5.15.0",
     "ionic": "^5.4.16",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.8",
