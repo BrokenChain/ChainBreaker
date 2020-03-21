@@ -13,6 +13,7 @@ import * as Vis from '../main/map_vis';
 })
 export class LoginPage implements OnInit {
 
+  chart: any;
   username: string;
   password: string;
   homeOfficeNo: any;
@@ -23,7 +24,7 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
-    Vis.draw();
+    this.chart = Vis.draw('chartdiv_login');
     /*
     if (localStorage.length > 0) {
       this.presentToast('Logged in');
@@ -43,7 +44,7 @@ export class LoginPage implements OnInit {
         msg = 'Login failed';
       } else {
         msg = 'Login sucessful';
-        localStorage['username'] = this.username;
+        this.chart.dispose();
         this.navCtrl.navigateForward('main');
       }
 

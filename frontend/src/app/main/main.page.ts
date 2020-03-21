@@ -15,6 +15,7 @@ export class MainPage implements OnInit {
   @ViewChild('homeOffice', null) homeOffice;
   @ViewChild('sideMenu', null) sideMenu;
 
+  chart: any;
   state: any; // flags for displaying according page: 1: stats, 2: social, 3: profile
   hide1: boolean;
   hide2: boolean;
@@ -50,10 +51,17 @@ export class MainPage implements OnInit {
     this.homeless = true;
   }
 
-  ngOnInit() { }
+
+  ionViewWillLeave() {
+    this.chart.dispose();
+  }
+
+  ngOnInit() {
+
+  }
 
   ionViewDidEnter() {
-    Vis.draw();
+    this.chart = Vis.draw('chartdiv');
     this.createLineChart();
     this.createPieChart();
   }
