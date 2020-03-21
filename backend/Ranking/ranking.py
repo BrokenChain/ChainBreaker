@@ -14,3 +14,25 @@ def get_users_with_points():
         "success": "true",
         "table": table
     }
+
+
+def add_points_to_user(username, points):
+    data = pandas.read_csv(users_file)
+    for index, row in data.iterrows():
+        if row['username'] == username:
+            row['points'] += points
+    data.to_csv(users_file)
+    return {
+        "success": "true"
+    }
+
+
+def sub_points_to_user(username, points):
+    data = pandas.read_csv(users_file)
+    for index, row in data.iterrows():
+        if row['username'] == username:
+            row['points'] -= points
+    data.to_csv(users_file)
+    return {
+        "success": "true"
+    }

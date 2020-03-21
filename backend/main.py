@@ -6,7 +6,7 @@ from Registration.registration import register_user
 from Getter.getUser import get_user_by_username
 from Heatmap.heatmap import get_heatmap_data
 from Profile.profile_controller import profile_data
-from Ranking.ranking import get_users_with_points
+from Ranking.ranking import get_users_with_points, add_points_to_user, sub_points_to_user
 
 app = Flask(__name__)
 CORS(app)
@@ -45,7 +45,7 @@ def login():
 
 
 @app.route("/users", methods=['POST'])
-def registerUser():
+def register_user():
     print(request.args)
 
     username = request.json['username']
@@ -73,6 +73,20 @@ def user_profile():
 @app.route("/table")
 def get_table():
     return get_users_with_points()
+
+
+@app.route("/addpoints")
+def add_points():
+    username = request.json['username']
+    points = request.json['points']
+    return add_points_to_user(username, points)
+
+
+@app.route("/subpoints")
+def sub_points():
+    username = request.json['username']
+    points = request.json['points']
+    return sub_points_to_user(username, points)
 
 
 if __name__ == '__main__':
