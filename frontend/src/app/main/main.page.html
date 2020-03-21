@@ -6,7 +6,7 @@
         <img src="../../assets/imgs/profile-pictures/girl2.png">
       </div>
       <div class="profile_info">
-        <h3>julie</h3>
+        <h3>Julie</h3>
         1980 P.
       </div>
     </ion-item>
@@ -14,11 +14,14 @@
     <!-- widgets -->
     <ion-content *ngIf="!this.hide1">
       <div class="statistics">
-        <h2>Personal Statistics</h2>
-        <canvas #lineChart></canvas>
+        <ion-header>
+          <h2 style="margin: 15px">Persönliche Statistik</h2>
+        </ion-header>
+        <canvas #lineChart style="margin: 15px"></canvas>
         <br>
-        Distribution of earned credits
-        <canvas #pieChart></canvas>
+        <br>
+        <h3 style="margin-left: 15px">Verteilung verdienter Punke</h3>
+        <canvas #pieChart  style="margin: 15px"></canvas>
       </div>
     </ion-content>
 
@@ -26,29 +29,29 @@
       <div class="card">
         <img src="../../assets/imgs/cooking.png" alt="Cooking" style="width:100%">
         <div class="container">
-          <h4><b>Cooking</b></h4> 
-          <p>Stay healthy to earn some points!</p> 
+          <h4><b>Kochen</b></h4>
+          <p>Bleib gesund und verdiene Punkte!</p>
         </div>
       </div>
       <div class="card">
         <img src="../../assets/imgs/sport.png" alt="Sports" style="width:100%">
         <div class="container">
-          <h4><b>Sports</b></h4> 
-          <p>How about a Workout today?</p> 
+          <h4><b>Sport</b></h4>
+          <p>Wie wäre es mit einem Workout für heute?</p>
         </div>
       </div>
       <div class="card">
         <img src="../../assets/imgs/social.png" alt="Social Commitment" style="width:100%">
         <div class="container">
-          <h4><b>Social Commitment</b></h4> 
-          <p>Help people to earn points and karma! :-)</p> 
+          <h4><b>Soziales Engagement</b></h4>
+          <p>Hilf anderen und verdien dir Karma! :-)</p>
         </div>
       </div>
       <div class="card">
         <img src="../../assets/imgs/homeoffice.png" alt="Homeoffice" style="width:100%">
         <div class="container">
           <h4><b>Homeoffice</b></h4> 
-          <p>How do you working?</p> 
+          <p>Wie arbeitest du?</p>
         </div>
       </div>
     </div>
@@ -62,7 +65,7 @@
         <ion-card button="true" (click)="showStats()">
           <ion-card-content>
             <ion-icon name="body-outline"></ion-icon>
-            Stats
+            Statistik
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -70,7 +73,7 @@
         <ion-card button="true" (click)="showSocial()">
           <ion-card-content>
             <ion-icon name="people-outline"></ion-icon>
-            Social
+            Sozial
           </ion-card-content>
         </ion-card>
       </ion-col>

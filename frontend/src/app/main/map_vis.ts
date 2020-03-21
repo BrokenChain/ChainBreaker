@@ -7,11 +7,9 @@ export function draw() {
 
     // calculate which map to be used
     let currentMap = 'germanyLow';
-    let title = 'Germany';
 
     // Create map instance
     let chart = am4core.create('chartdiv', am4maps.MapChart);
-    chart.titles.create().text = title;
 
     // Set map definition
     chart.geodataSource.url = '../../assets/germanyLow.json';

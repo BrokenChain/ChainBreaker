@@ -90,7 +90,7 @@ export class MainPage implements OnInit {
       data: {
         labels: ['KW6', 'KW7', 'KW8', 'KW9', 'KW10', 'KW11', 'KW12'],
         datasets: [{
-          label: 'Days of Social Distancing per week',
+          label: '#StayHome Tage pro Woche',
           data: [3, 0, 0, 1, 1, 3, 6],
           backgroundColor: 'rgb(38, 194, 129)',
           borderColor: 'rgb(38, 194, 129)',
