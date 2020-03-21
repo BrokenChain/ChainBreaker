@@ -1,32 +1,124 @@
-<ion-split-pane side="first" contentId="first">
-  <!--  our side menu  -->
-  <ion-menu contentId="main">
-      <ion-list>
-          <ion-item>
-              <ion-input placeholder="Benutzername" [(ngModel)]="username"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-input placeholder="Kennwort" type="password" [(ngModel)]="password"></ion-input>
-          </ion-item>
-      </ion-list>
+<ion-split-pane contentId="main">
+    <!--  our side menu  -->
+    <ion-menu>
+        <ion-content>
+            <form  #form="ngForm">
+                <ion-grid>
+                    <ion-row class="login">
+                        <div class="logo-stayr">
+                            <img src="../../assets/logo/stayr.png">
+                        </div>
+                    </ion-row>
+                    <ion-row class="login ">
+                        <ion-col align="center" size-md="6" size-lg="5" size-xs="12">
+                            <div align="center">
+                                <h3>Logge dich als StayR ein</h3>
+                            </div>
+                            <div padding>
+                                <ion-item>
+                                    <ion-input  name="name" type="text" placeholder="Benutzername" ngModel required></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-input name="password" type="password" placeholder="Kennwort" ngModel required></ion-input>
+                                </ion-item>
+                            </div>
+                            <div padding>
+                                <ion-button size="large" expand="block" (click)="login()">Anmelden</ion-button>
+                            </div>
+                            <div>
+                                <a>Noch nicht registriert?</a>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <div class="break"></div>
+                    <ion-row class="sponsors">
+                        <h4>Sponsoren</h4>
+                    </ion-row>
+                    <ion-row class="sponsors">
+                        <div class="sponsors-logos">
+                            <img width="40%" height="50%" src="../../assets/logo/sponsors/prototype-fund.jpeg">
+                        </div>
+                        <div class="sponsors-logos">
+                            <img width="50%" height="45%" src="../../assets/logo/sponsors/d21-initiative.jpeg">
+                        </div>
+                        <div class="sponsors-logos">
+                            <img width="80%" height="40%" src="../../assets/logo/sponsors/impact-hub-berlin.png">
+                        </div>
+                        <div class="sponsors-logos">
+                            <img width="40%" height="50%" src="../../assets/logo/sponsors/prototype-fund.jpeg">
+                        </div>
+                        <div class="sponsors-logos">
+                            <img src="../../assets/logo/sponsors/project-together.png">
+                        </div>
+                        <div class="sponsors-logos">
+                            <img src="../../assets/logo/sponsors/tech4-ger.png">
+                        </div>
+                        <div class="sponsors-logos">
+                            <img src="../../assets/logo/sponsors/code-for-ger.jpeg">
+                        </div>
+                    </ion-row>
+                </ion-grid>
+            </form>
+        </ion-content>
+    </ion-menu>
 
-      <ion-button full (click)="login()">Anmelden</ion-button>
-  </ion-menu>
+    <!-- the main content -->
 
-  <!-- the main content -->
-  <ion-router-outlet id="main">
-  </ion-router-outlet>
+    <ion-router-outlet id="main">
+        <ion-grid>
+            <ion-col>
+                <ion-row class="welcome">
+                    <h1>Willkommen zur StayR Community</h1>
+                </ion-row>
+                <ion-row class="welcome">
+                    Finde heraus, wo StayR's den größten Einfluss haben und werde Teil davon!
+                </ion-row>
+            </ion-col>
+            <!--
+            <ion-col>
+                <ion-row class="logo-de">
+                    <img width="30%" height="30%" src="../../assets/logo/DEgov-BReg-Logo.svg.png">
+                </ion-row>
+            </ion-col>
+            -->
+        </ion-grid>
+
+
+        <div id="chartdiv" class="map" style="position: absolute; bottom: 0%; top: 0%; width: 100%"></div>
+        <ion-card class="news">
+            <ion-row>
+                <ion-col col-4>
+                    <ion-card color="success" style="color: DarkGreen">
+                        <ion-card-header>
+                            <ion-card-title #homeStay>{{homeStayNo}}</ion-card-title>
+                            <ion-card-subtitle>Zu Hause</ion-card-subtitle>
+                        </ion-card-header>
+                    </ion-card>
+                </ion-col>
+
+                <ion-col col-4>
+                    <ion-card>
+                        <ion-card-header color="warning">
+                            <ion-card-title #homeOffice>{{homeOfficeNo}}</ion-card-title>
+                            <ion-card-subtitle>Home Office</ion-card-subtitle>
+                        </ion-card-header>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+            <ion-card-header>
+                <ion-card-title>Newsticker</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <label style="color: MediumSeaGreen">16.47</label> - In Polen findet Alkohol, der bei Razzien, beschlagnahmt wurde, in der Virus-Krise eine neue Verwendung.
+            </ion-card-content>
+            <ion-card-content>
+                <label style="color: MediumSeaGreen">16.45</label> - Spanien baut ein Konferenzzentrum in Madrid zu einem großen Militärzarett um.
+            </ion-card-content>
+        </ion-card>
+    </ion-router-outlet>
 
 </ion-split-pane>
 
 <ion-menu-button>
-
-
-
-
-
-
-
-
 
 

@@ -4,6 +4,7 @@ import { ToastController } from '@ionic/angular';
 import { Tab1Page} from '../tab1/tab1.page';
 import {NavController} from '@ionic/angular';
 import * as Constants from '../provider/constants';
+import * as Vis from '../main/map_vis';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,22 @@ export class LoginPage implements OnInit {
 
   username: string;
   password: string;
-  constructor(private http: HttpClient, public toastController: ToastController, public navCtrl: NavController) {  }
+  homeOfficeNo: any;
+  homeStayNo: any;
+  constructor(private http: HttpClient, public toastController: ToastController, public navCtrl: NavController) {
+    this.homeStayNo = 30212;
+    this.homeOfficeNo = 10231;
+  }
 
   ngOnInit() {
+    Vis.draw();
+    /*
     if (localStorage.length > 0) {
-      this.presentToast("Logged in");
+      this.presentToast('Logged in');
       this.navCtrl.navigateForward('main');
     }
+
+     */
   }
 
 
@@ -29,7 +39,7 @@ export class LoginPage implements OnInit {
       username: this.username, password: this.password
     }).subscribe((response) => {
       let msg = '';
-      if (response['success'] == 'false') {
+      if (response['success'] === 'false') {
         msg = 'Login failed';
       } else {
         msg = 'Login sucessful';
