@@ -1,0 +1,12 @@
+<ion-split-pane contentId="main">
+  <!--  our side menu  -->
+  <ion-menu contentId="main">
+    <ion-col center>
+      <ion-button (click)="openLoginPage()">Log in</ion-button>
+      <ion-button (click)="openRegisterPage()">Register</ion-button>
+    </ion-col>
+  </ion-menu>
+
+  <!-- the main content -->
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-split-pane>
