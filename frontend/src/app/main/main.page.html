@@ -5,12 +5,26 @@
       <div class="avatar">
         <img src="../../assets/imgs/snoop_dog.jpg">
       </div>
-      <div class="profile_info">Snoop Dog</div>
+      <div class="profile_info">
+        <h3>Snoop Dog</h3>
+        3000 pts.
+      </div>
     </ion-item>
+
+    <!-- widgets -->
+    <ion-content style="white-space: nowrap">
+      <div class="statistics">
+        <h2>Personal Statistics</h2>
+        <canvas #lineChart></canvas>
+        <br>
+        Distribution of earned credits
+        <canvas #pieChart></canvas>
+      </div>
+    </ion-content>
 
     <ion-row>
       <ion-col col-4>
-        <ion-card button="true">
+        <ion-card button="true" (click)="showStats()">
           <ion-card-content>
             <ion-icon name="stats-chart-outline"></ion-icon>
             Stats
@@ -18,7 +32,7 @@
         </ion-card>
       </ion-col>
       <ion-col col-4>
-        <ion-card button="true">
+        <ion-card button="true" (click)="showSocial()">
           <ion-card-content>
             <ion-icon name="people-outline"></ion-icon>
             Social
@@ -26,7 +40,7 @@
         </ion-card>
       </ion-col>
       <ion-col col-4>
-        <ion-card button="true">
+        <ion-card button="true" (click)="showProfile()">
           <ion-card-content>
             <ion-icon name="settings-outline"></ion-icon>
             Profile
