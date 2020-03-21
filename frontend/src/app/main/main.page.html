@@ -22,6 +22,7 @@
       </div>
     </ion-content>
 
+    <!-- Class Cards -->
     <div class="flex-container" *ngIf="!this.hide2">
       <div class="card">
         <img src="../../assets/imgs/cooking.png" alt="Cooking" style="width:100%">
@@ -30,7 +31,7 @@
           <p>Stay healthy to earn some points!</p> 
         </div>
       </div>
-      <div class="card">
+      <div class="card" (click)="showSports()">
         <img src="../../assets/imgs/sport.png" alt="Sports" style="width:100%">
         <div class="container">
           <h4><b>Sports</b></h4> 
@@ -52,6 +53,82 @@
         </div>
       </div>
     </div>
+
+    <!-- Sport Cards -->
+    <div class="flex-container" *ngIf="!this.hideSport">
+      <div class="card">
+        <img src="../../assets/imgs/homeworkout.png" alt="Workouts" style="width:100%">
+        <div class="container" (click)="showChallenges()">
+          <h4><b>Sport</b></h4> 
+          <p>Zu deinen Workouts & Challenges!</p> 
+        </div>
+      </div>
+      <div class="card">
+        <img src="../../assets/imgs/sportfeed.png" alt="Feed" style="width:100%">
+        <div class="container" (click)="showSportFeed()">
+          <h4><b>Feed</b></h4> 
+          <p>Zu deinem Feed zum Thema Sport!</p> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Sport Challenges Cards -->
+    <div class="flex-container" *ngIf="!this.hideSportChallenges">
+      <div class="card">
+        <img src="../../assets/imgs/homeworkout.png" alt="Workouts" style="width:100%">
+        <div class="container">
+          <h4><b>Workout</b></h4> 
+          <p>35 Punkte: Workout zu Hause</p> 
+        </div>
+      </div>
+      <div class="card">
+        <img src="../../assets/imgs/Split.png" alt="Feed" style="width:100%">
+        <div class="container">
+          <h4><b>Split-Training</b></h4> 
+          <p>25 Punkte: Split Training im Gym</p> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Sport Feed Cards -->
+    <div class="flex-column" *ngIf="!this.hideSportFeed">
+        <ion-card>
+            <ion-item class="highlight">
+              <ion-thumbnail  slot="start">
+                <img src="../../assets/imgs/profile-pictures/girl2.png">
+              </ion-thumbnail>
+              <ion-label>
+                <h2 class="username">Du</h2>
+              </ion-label>
+              <p>Hat wer einen coolen Homeworkout-Plan für mich?</p>
+              <ion-icon name="logo-twitch"></ion-icon><p class="message"> 3</p>
+            </ion-item>
+          </ion-card>
+          <ion-card>
+              <ion-item class="highlight">
+                <ion-thumbnail  slot="start">
+                  <img src="../../assets/imgs/profile-pictures/girl2.png">
+                </ion-thumbnail>
+                <ion-label>
+                  <h2 class="username">Du</h2>
+                </ion-label>
+                <p>Wie trainiere ich richtig Bauchmuskeln?</p>
+                <ion-icon name="logo-twitch"></ion-icon><p class="message"> 3045</p>
+              </ion-item>
+            </ion-card>
+            <ion-card>
+                <ion-item class="highlight">
+                  <ion-thumbnail  slot="start">
+                    <img src="../../assets/imgs/profile-pictures/girl2.png">
+                  </ion-thumbnail>
+                  <ion-label>
+                    <h2 class="username">Du</h2>
+                  </ion-label>
+                  <p>Wie findet ihr Daniel Aminatis Training?</p>
+                  <ion-icon name="logo-twitch"></ion-icon><p class="message"> 9999+</p>
+                </ion-item>
+              </ion-card>
+      </div>
 
     <ion-content *ngIf="!this.hide3">
       <app-ranking></app-ranking>
