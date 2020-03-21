@@ -142,7 +142,7 @@
       <div class="flex-container" *ngIf="!this.social">
           <div class="card">
             <img src="../../assets/imgs/elderly.png" alt="Workouts" style="width:100%">
-            <div class="container" (click)="showEldery()">
+            <div class="container" (click)="showElderly()">
               <h4><b>Shopping</b></h4> 
               <p>Hilf Älteren Menschen in deiner Nähe mit dem Einkauf!</p> 
             </div>
@@ -157,15 +157,34 @@
         </div>
 
          <!-- Elderly Cards -->
-        <div class="flex-container" *ngIf="!this.elderly">
+         <div class="flex-container" *ngIf="!this.eldery">
             <div class="card">
               <img src="../../assets/imgs/elderly.png" alt="Workouts" style="width:100%">
               <div class="container">
                 <h4><b>Shopping</b></h4> 
-                <p>65 Punkte: Klick hier und du bekommst per Mail einen Auftrag!</p> 
+                <p>65 Punkte: Klick hier und du bekommst per eMail einen Auftrag!</p> 
               </div>
             </div>
           </div>
+
+          <!-- Elderly Cards -->
+         <div class="flex-container" *ngIf="!this.homeless">
+            <div class="card">
+              <img src="../../assets/imgs/homeless.png" alt="Workouts" style="width:100%">
+              <div class="container">
+                <h4><b>Hilfe im Heim</b></h4> 
+                <p>85 Punkte: Klick hier und du bekommst per eMail einen Auftrag!</p> 
+              </div>
+            </div>
+            <div class="card">
+                <img src="../../assets/imgs/homeless_help.png" alt="Workouts" style="width:100%">
+                <div class="container">
+                  <h4><b>Spende Geld</b></h4> 
+                  <p>125 Punkte: Klick hier und du kommst zu unseren Partnern!!</p> 
+                </div>
+              </div>
+          </div>
+  
 
     <ion-content *ngIf="!this.hide3">
       <app-ranking></app-ranking>

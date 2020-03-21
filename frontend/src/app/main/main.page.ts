@@ -1,9 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import * as Vis from './map_vis';
-import { menuController } from '@ionic/core';
-import { BooleanValueAccessor } from '@ionic/angular';
-
 
 @Component({
   selector: 'app-main',
@@ -52,9 +49,10 @@ export class MainPage implements OnInit {
     this.homeless = true;
   }
 
-  ngOnInit() { Vis.draw(); }
+  ngOnInit() {  }
 
   ionViewDidEnter() {
+    Vis.draw();
     this.createLineChart();
     this.createPieChart();
   }
