@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import * as Vis from './map_vis';
+import { menuController } from '@ionic/core';
+
 
 @Component({
   selector: 'app-main',
@@ -12,6 +14,7 @@ export class MainPage implements OnInit {
   @ViewChild('pieChart', null) pieChart;
   @ViewChild('homeStay', null) homeStay;
   @ViewChild('homeOffice', null) homeOffice;
+  @ViewChild('sideMenu', null) sideMenu;
 
   state: any; // flags for displaying according page: 1: stats, 2: social, 3: profile
   hide1: boolean;
