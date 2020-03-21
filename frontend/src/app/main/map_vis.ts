@@ -3,9 +3,9 @@ import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from '@amcharts/amcharts4/maps';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 
-export function draw() {
+export function draw(divId) {
     // Create map instance
-    let chart = am4core.create('chartdiv', am4maps.MapChart);
+    let chart = am4core.create(divId, am4maps.MapChart);
 
     // Set map definition
     chart.geodataSource.url = '../../assets/germanyLow.json';
@@ -77,4 +77,6 @@ export function draw() {
         latitude: -90,
         longitude: 40,
     };
+
+    return chart
 }
