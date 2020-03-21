@@ -16,6 +16,10 @@ export class LoginPage implements OnInit {
   constructor(private http: HttpClient, public toastController: ToastController, public navCtrl: NavController) {  }
 
   ngOnInit() {
+    if (localStorage.length > 0) {
+      console.log(localStorage['username']);
+      this.presentToast("Logged in");
+    }
   }
 
   login() {
@@ -27,6 +31,8 @@ export class LoginPage implements OnInit {
         msg = 'Login failed';
       } else {
         msg = 'Login sucessful';
+        localStorage['username'] = this.username;
+        
       }
       this.presentToast(msg);
     });
