@@ -6,9 +6,11 @@ from Registration.registration import register_user
 from Getter.getUser import get_user_by_username
 from Heatmap.heatmap import get_heatmap_data
 from Profile.profile_controller import profile_data
+from Ranking.ranking import get_users_with_points
 
 app = Flask(__name__)
 CORS(app)
+
 
 @app.route("/")
 def home():
@@ -16,6 +18,7 @@ def home():
         'success': 'true',
         'heatmap': get_heatmap_data()
     }
+
 
 @app.route("/login", methods=['POST'])
 @cross_origin()
@@ -62,10 +65,15 @@ def registerUser():
 
 @app.route("/profile")
 def user_profile():
-    
     username = request.json['username']
 
     return profile_data(username)
+
+
+@app.route("/table")
+def get_table():
+    return get_users_with_points()
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

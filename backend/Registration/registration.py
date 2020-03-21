@@ -12,25 +12,21 @@ def register_user(username, password, email, state):
         for row in users_reader:
             users.append(row)
 
-    print("users")
-    print(users)
-
     if len(users) == 0:
-        print("len 0")
         with open(users_file, 'w') as csvfile:
-            fieldnames = ['username', 'password', 'email', 'state']
+            fieldnames = ['username', 'password', 'email', 'state', 'points']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
-            print("header written")
 
     new_user = {
         'username': username,
         'password': password,
         'email': email,
-        'state': state
+        'state': state,
+        'points': 0
     }
     with open(users_file, 'a', newline='') as csvfile:
-        fieldnames = ['username', 'password', 'email', 'state']
+        fieldnames = ['username', 'password', 'email', 'state', 'points']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writerow(new_user)

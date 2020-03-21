@@ -13,7 +13,8 @@ def get_user_by_username(username):
                 "success": "true",
                 "username:": row['username'],
                 "email": row['email'],
-                "state": row['state']
+                "state": row['state'],
+                "points": row['points']
             }
     return {
         "success": "false"
