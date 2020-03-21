@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ToastController } from '@ionic/angular';
 import { Tab1Page} from '../tab1/tab1.page';
 import {NavController} from '@ionic/angular';
+import * as Constants from '../provider/constants';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    this.http.post('http://localhost:5000/login', {
+    this.http.post(Constants.BASE_URL + Constants.LOGIN, {
       username: this.username, password: this.password
     }).subscribe((response) => {
       let msg = '';
