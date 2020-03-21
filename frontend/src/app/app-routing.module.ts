@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./greeter/greeter.module').then( m => m.GreeterPageModule)
+  },  {
+    path: 'main',
+    loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
   }
+
     ]
 ;
 @NgModule({

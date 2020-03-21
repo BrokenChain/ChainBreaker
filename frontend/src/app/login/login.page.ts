@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     if (localStorage.length > 0) {
       this.presentToast("Logged in");
-      this.navCtrl.navigateForward('tabs');
+      this.navCtrl.navigateForward('main');
     }
   }
 
@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
       } else {
         msg = 'Login sucessful';
         localStorage['username'] = this.username;
-        this.navCtrl.navigateForward('tabs');
+        this.navCtrl.navigateForward('main');
       }
 
       this.presentToast(msg);

@@ -1,0 +1,49 @@
+<ion-split-pane contentId="main">
+  <!--  our side menu  -->
+  <ion-menu contentId="main">
+    <div class="avatar">
+      <img src="../../assets/imgs/snoop_dog.jpg">
+    </div>
+
+    <ion-row>
+      <ion-col col-4>
+        <ion-card>
+          <ion-card-content>
+            <ion-icon name="stats-chart-outline"></ion-icon>
+            Statistics
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card>
+          <ion-card-content>
+            <ion-icon name="people-outline"></ion-icon>
+            Social
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card>
+          <ion-card-content>
+            <ion-icon name="settings-outline"></ion-icon>
+            Profile
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-menu>
+
+  <!-- the main content -->
+  <ion-router-outlet id="main">
+    <ion-card class="news">
+      <img src="../../assets/imgs/munich.jpg" />
+      <ion-card-header>
+        <ion-card-subtitle>News</ion-card-subtitle>
+        <ion-card-title>Current stats</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        We live in a society. This app is awesome. I need to find some words to fill this test so the card view gets bigger and so on and so on blablablaabl
+      </ion-card-content>
+    </ion-card>
+  </ion-router-outlet>
+</ion-split-pane>

@@ -14,12 +14,11 @@ export class GreeterPage implements OnInit {
   }
 
   openLoginPage() {
-    console.log("clicked Log in!");
     this.navCtrl.navigateForward('login');
   }
 
   openRegisterPage() {
-    console.log("clicked Register!");
+    console.log('clicked Register!');
   }
 
 }

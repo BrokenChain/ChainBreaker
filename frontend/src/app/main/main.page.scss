@@ -1,0 +1,29 @@
+.avatar {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  padding: 10px;
+
+
+  img {
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    bottom: calc(-1*(80px + 4px));
+    border: 8px solid #9Dc912;
+    background-color: #fff;
+  }
+}
+
+.news {
+  width: 360px;
+  height: 420px;
+  float: right;
+  margin-top: 100px;
+  margin-right: 50px;
+}
+
+.navigator {
+  display:inline-block;
+}
+
