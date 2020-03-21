@@ -27,6 +27,10 @@ export class MainPage implements OnInit {
   homeStayNo: any;
   homeOfficeNo: any;
 
+  social: boolean;
+  eldery: boolean;
+  homeless: boolean;
+
   pie: any;
   line: any;
   colorArray: any;
@@ -40,12 +44,15 @@ export class MainPage implements OnInit {
     this.hideSport = true;
     this.hideSportChallenges = true;
     this.hideSportFeed = true;
+    this.social = true;
+    this.eldery = true;
+    this.homeless = true;
   }
 
-  ngOnInit() { ; }
+  ngOnInit() {  }
 
   ionViewDidEnter() {
-    Vis.draw()
+    Vis.draw();
     this.createLineChart();
     this.createPieChart();
   }
@@ -161,6 +168,21 @@ export class MainPage implements OnInit {
     this.hideSportFeed = false;
   }
 
+  showSocialCommitment() {
+    this.hideAll();
+    this.social = false;
+  }
+
+  showElderly() {
+    this.hideAll();
+    this.eldery = false;
+  }
+
+  showHomeless() {
+    this.hideAll();
+    this.homeless = false;
+  }
+
   hideAll() {
     this.hide1 = true;
     this.hide2 = true;
@@ -168,5 +190,8 @@ export class MainPage implements OnInit {
     this.hideSport = true;
     this.hideSportChallenges = true;
     this.hideSportFeed = true;
+    this.social = true;
+    this.eldery = true;
+    this.homeless = true;
   }
 }
