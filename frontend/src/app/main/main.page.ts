@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import * as Vis from './map_vis';
+import { menuController } from '@ionic/core';
+
 
 @Component({
   selector: 'app-main',
@@ -12,6 +14,7 @@ export class MainPage implements OnInit {
   @ViewChild('pieChart', null) pieChart;
   @ViewChild('homeStay', null) homeStay;
   @ViewChild('homeOffice', null) homeOffice;
+  @ViewChild('sideMenu', null) sideMenu;
 
   state: any; // flags for displaying according page: 1: stats, 2: social, 3: profile
   hide1: boolean;
@@ -97,7 +100,7 @@ export class MainPage implements OnInit {
       data: {
         labels: ['KW6', 'KW7', 'KW8', 'KW9', 'KW10', 'KW11', 'KW12'],
         datasets: [{
-          label: 'Days of Social Distancing per week',
+          label: '#StayHome Tage pro Woche',
           data: [3, 0, 0, 1, 1, 3, 6],
           backgroundColor: 'rgb(38, 194, 129)',
           borderColor: 'rgb(38, 194, 129)',
