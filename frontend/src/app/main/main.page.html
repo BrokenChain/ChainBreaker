@@ -12,7 +12,7 @@
     </ion-item>
 
     <!-- widgets -->
-    <ion-content>
+    <ion-content *ngIf="!this.hide1">
       <div class="statistics">
         <h2>Personal Statistics</h2>
         <canvas #lineChart></canvas>
@@ -22,7 +22,7 @@
       </div>
     </ion-content>
 
-    <!-- <div class="flex-container">
+    <div class="flex-container" *ngIf="!this.hide2">
       <div class="card">
         <img src="../../assets/imgs/cooking.png" alt="Cooking" style="width:100%">
         <div class="container">
@@ -51,13 +51,13 @@
           <p>How do you working?</p> 
         </div>
       </div>
-    </div> -->
+    </div> 
 
     <ion-row>
       <ion-col col-4>
         <ion-card button="true" (click)="showStats()">
           <ion-card-content>
-            <ion-icon name="stats-chart-outline"></ion-icon>
+            <ion-icon name="body-outline"></ion-icon>
             Stats
           </ion-card-content>
         </ion-card>
@@ -71,10 +71,10 @@
         </ion-card>
       </ion-col>
       <ion-col col-4>
-        <ion-card button="true" (click)="showProfile()">
+        <ion-card button="true" (click)="showRanking()">
           <ion-card-content>
-            <ion-icon name="settings-outline"></ion-icon>
-            Profile
+            <ion-icon name="stats-chart-outline"></ion-icon>
+            Ranks
           </ion-card-content>
         </ion-card>
       </ion-col>

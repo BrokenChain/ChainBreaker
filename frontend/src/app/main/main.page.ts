@@ -13,7 +13,7 @@ export class MainPage implements OnInit {
   @ViewChild('homeStay', null) homeStay;
   @ViewChild('homeOffice', null) homeOffice;
 
-  state: any; // flags for displaying according page: 1: stats, 2: sociol, 3: profile
+  state: any; // flags for displaying according page: 1: stats, 2: social, 3: profile
   hide1: boolean;
   hide2: boolean;
   hide3: boolean;
@@ -50,13 +50,13 @@ export class MainPage implements OnInit {
 
   incrementHomeOffice() {
     this.homeOfficeNo++;
-    //this.homeOffice.innerHTML = '10.232';
+    // this.homeOffice.innerHTML = '10.232';
     this.btnDisabled = true;
   }
 
   incrementHomeStay() {
     this.homeStayNo++;
-    //this.homeStay.innerHtml = '30.213';
+    // this.homeStay.innerHtml = '30.213';
     this.btnDisabled = true;
   }
 
@@ -112,13 +112,12 @@ export class MainPage implements OnInit {
   }
 
   showStats() {
+    window.location.reload();
     if (this.state !== 1) {
       this.state = 1;
       this.hide1 = false;
       this.hide2 = true;
       this.hide3 = true;
-      this.createLineChart();
-      this.createPieChart();
     }
   }
 
@@ -131,13 +130,12 @@ export class MainPage implements OnInit {
     }
   }
 
-  showProfile() {
+  showRanking() {
     if (this.state !== 3) {
       this.state = 3;
       this.hide1 = true;
       this.hide2 = true;
       this.hide3 = false;
-      console.log("Show Profile!");
     }
   }
 }
