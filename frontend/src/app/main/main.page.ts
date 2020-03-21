@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
-import { AnimationController} from '@ionic/angular';
-import {isCombinedModifierFlagSet} from 'tslint';
 
 @Component({
   selector: 'app-main',
@@ -11,7 +9,6 @@ import {isCombinedModifierFlagSet} from 'tslint';
 export class MainPage implements OnInit {
   @ViewChild('lineChart') lineChart;
   @ViewChild('pieChart') pieChart;
- statisticsRef = document.getElementById("statistics");
 
   state: any; // flags for displaying according page: 1: stats, 2: sociol, 3: profile
   hide1: boolean;
@@ -21,7 +18,7 @@ export class MainPage implements OnInit {
   pie: any;
   line: any;
   colorArray: any;
-  constructor(private animationCtrl: AnimationController) {
+  constructor() {
     this.hide1 = false;
     this.hide2 = true;
     this.hide3 = true;
