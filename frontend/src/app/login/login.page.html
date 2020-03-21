@@ -2,7 +2,7 @@
     <!--  our side menu  -->
     <ion-menu>
         <ion-content>
-            <form  #form="ngForm">
+            <form  #form="ngForm" (ngSubmit)="login()">
                 <ion-grid>
                     <ion-row class="login">
                         <div class="logo-stayr">
@@ -14,7 +14,7 @@
                             <div align="center">
                                 <h3>Logge dich als StayR ein</h3>
                             </div>
-                            <div padding>
+                            <div>
                                 <ion-item>
                                     <ion-input  name="name" type="text" placeholder="Benutzername" ngModel required></ion-input>
                                 </ion-item>
@@ -22,8 +22,8 @@
                                     <ion-input name="password" type="password" placeholder="Kennwort" ngModel required></ion-input>
                                 </ion-item>
                             </div>
-                            <div padding>
-                                <ion-button size="large" expand="block" (click)="login()">Anmelden</ion-button>
+                            <div>
+                                <ion-button type="submit" size="large" expand="block">Anmelden</ion-button>
                             </div>
                             <div>
                                 <a>Noch nicht registriert?</a>
@@ -43,9 +43,6 @@
                         </div>
                         <div class="sponsors-logos">
                             <img width="80%" height="40%" src="../../assets/logo/sponsors/impact-hub-berlin.png">
-                        </div>
-                        <div class="sponsors-logos">
-                            <img width="40%" height="50%" src="../../assets/logo/sponsors/prototype-fund.jpeg">
                         </div>
                         <div class="sponsors-logos">
                             <img src="../../assets/logo/sponsors/project-together.png">

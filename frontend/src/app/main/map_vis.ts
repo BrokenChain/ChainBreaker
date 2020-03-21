@@ -57,10 +57,10 @@ export function draw() {
     // Set up custom heat map legend labels using axis ranges
     let minRange = heatLegend.valueAxis.axisRanges.create();
     minRange.value = heatLegend.minValue;
-    minRange.label.text = 'Little';
+    minRange.label.text = 'Wenig';
     let maxRange = heatLegend.valueAxis.axisRanges.create();
     maxRange.value = heatLegend.maxValue;
-    maxRange.label.text = 'A lot!';
+    maxRange.label.text = 'Stark';
 
     // Blank out internal heat legend value axis labels
 // tslint:disable-next-line:only-arrow-functions
