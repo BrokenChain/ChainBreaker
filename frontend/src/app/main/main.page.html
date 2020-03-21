@@ -19,7 +19,6 @@
         </ion-header>
         <canvas #lineChart style="margin: 15px"></canvas>
         <br>
-        <br>
         <h3 style="margin-left: 15px">Verteilung verdienter Punke</h3>
         <canvas #pieChart  style="margin: 15px"></canvas>
       </div>
@@ -187,7 +186,7 @@
 
         <ion-col col-4>
           <ion-card>
-            <ion-card-header color="warning">
+            <ion-card-header color="warning" style="color: chocolate">
               <ion-card-title #homeOffice>{{homeOfficeNo}}</ion-card-title>
               <ion-card-subtitle>Home Office</ion-card-subtitle>
             </ion-card-header>
@@ -212,3 +211,4 @@
   </ion-router-outlet>
 
 </ion-split-pane>
+<ion-menu-button>
