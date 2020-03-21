@@ -1,18 +1,18 @@
-.avatar {
+.avatar img{
+  border: 3px solid rgba(0, 150, 0, 0.25);
+  padding: 0px;
+  border-radius: 100%;
+  box-sizing: content-box;
+  margin: 0 auto;
   width: 90px;
   height: 90px;
-  position: absolute;
-  padding: 10px;
+  overflow: hidden;
+  float: left;
+  margin-left: 0px;
+}
 
-
-  img {
-    display: block;
-    border-radius: 50%;
-    position: absolute;
-    bottom: calc(-1*(80px + 4px));
-    border: 8px solid #9Dc912;
-    background-color: #fff;
-  }
+.profile_info {
+  padding-left: 15px;
 }
 
 .news {
@@ -22,8 +22,3 @@
   margin-top: 100px;
   margin-right: 50px;
 }
-
-.navigator {
-  display:inline-block;
-}
-

@@ -1,21 +1,24 @@
 <ion-split-pane contentId="main">
   <!--  our side menu  -->
   <ion-menu contentId="main">
-    <div class="avatar">
-      <img src="../../assets/imgs/snoop_dog.jpg">
-    </div>
+    <ion-item class="profile-item">
+      <div class="avatar">
+        <img src="../../assets/imgs/snoop_dog.jpg">
+      </div>
+      <div class="profile_info">Snoop Dog</div>
+    </ion-item>
 
     <ion-row>
       <ion-col col-4>
-        <ion-card>
+        <ion-card button="true">
           <ion-card-content>
             <ion-icon name="stats-chart-outline"></ion-icon>
-            Statistics
+            Stats
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col col-4>
-        <ion-card>
+        <ion-card button="true">
           <ion-card-content>
             <ion-icon name="people-outline"></ion-icon>
             Social
@@ -23,7 +26,7 @@
         </ion-card>
       </ion-col>
       <ion-col col-4>
-        <ion-card>
+        <ion-card button="true">
           <ion-card-content>
             <ion-icon name="settings-outline"></ion-icon>
             Profile
