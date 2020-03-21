@@ -25,6 +25,7 @@
       </div>
     </ion-content>
 
+    <!-- Class Cards -->
     <div class="flex-container" *ngIf="!this.hide2">
       <div class="card">
         <img src="../../assets/imgs/cooking.png" alt="Cooking" style="width:100%">
@@ -33,7 +34,7 @@
           <p>Bleib gesund und verdiene Punkte!</p>
         </div>
       </div>
-      <div class="card">
+      <div class="card" (click)="showSports()">
         <img src="../../assets/imgs/sport.png" alt="Sports" style="width:100%">
         <div class="container">
           <h4><b>Sport</b></h4>
@@ -55,6 +56,88 @@
         </div>
       </div>
     </div>
+
+    <!-- Sport Cards -->
+    <div class="flex-container" *ngIf="!this.hideSport">
+      <div class="card">
+        <img src="../../assets/imgs/homeworkout.png" alt="Workouts" style="width:100%">
+        <div class="container" (click)="showChallenges()">
+          <h4><b>Sport</b></h4> 
+          <p>Zu deinen Workouts & Challenges!</p> 
+        </div>
+      </div>
+      <div class="card">
+        <img src="../../assets/imgs/sportfeed.png" alt="Feed" style="width:100%">
+        <div class="container" (click)="showSportFeed()">
+          <h4><b>Feed</b></h4> 
+          <p>Zu deinem Feed zum Thema Sport!</p> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Sport Challenges Cards -->
+    <div class="flex-container" *ngIf="!this.hideSportChallenges">
+      <div class="card">
+        <img src="../../assets/imgs/homeworkout.png" alt="Workouts" style="width:100%">
+        <div class="container">
+          <h4><b>Workout</b></h4> 
+          <p>35 Punkte: Workout zu Hause</p> 
+        </div>
+      </div>
+      <div class="card">
+        <img src="../../assets/imgs/Split.png" alt="Feed" style="width:100%">
+        <div class="container">
+          <h4><b>Split-Training</b></h4> 
+          <p>25 Punkte: Split Training im Gym</p> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Sport Feed Cards -->
+    <div class="flex-column" *ngIf="!this.hideSportFeed">
+        <ion-card>
+            <ion-item class="highlight">
+              <ion-thumbnail  slot="start">
+                <img src="../../assets/imgs/profile-pictures/girl2.png">
+              </ion-thumbnail>
+              <ion-label>
+                <h2 class="username">Du</h2>
+              </ion-label>
+              <div class="flex-column">
+                <p style="color:steelblue;">Hat wer einen coolen Homeworkout-Plan für mich?</p>
+                <div class="flex-row"><ion-icon style="left: 0" name="logo-twitch"></ion-icon><p class="message"> 3 Kommentare</p></div>
+              </div>
+              </ion-item>
+          </ion-card>
+          <ion-card>
+              <ion-item class="highlight">
+                <ion-thumbnail  slot="start">
+                  <img src="../../assets/imgs/profile-pictures/girl2.png">
+                </ion-thumbnail>
+                <ion-label>
+                  <h2 class="username">Du</h2>
+                </ion-label>
+                <div class="flex-column">
+                <p style="color:steelblue;">Wie trainiere ich richtig Bauchmuskeln?</p>
+                <div class="flex-row"><ion-icon style="left: 0" name="logo-twitch"></ion-icon><p class="message"> 850 Kommentare</p></div>
+              </div>
+              </ion-item>
+            </ion-card>
+            <ion-card>
+                <ion-item class="highlight">
+                  <ion-thumbnail  slot="start">
+                    <img src="../../assets/imgs/profile-pictures/girl2.png">
+                  </ion-thumbnail>
+                  <ion-label>
+                    <h2 class="username">Du</h2>
+                  </ion-label>
+                  <div class="flex-column">
+                  <p style="color:steelblue;">Wie findet ihr Daniel Aminatis Training?</p>
+                  <div class="flex-row"><ion-icon style="left: 0" name="logo-twitch"></ion-icon><p class="message"> 9945 Kommentare</p></div>
+                </div>
+                </ion-item>
+              </ion-card>
+      </div>
 
     <ion-content *ngIf="!this.hide3">
       <app-ranking></app-ranking>

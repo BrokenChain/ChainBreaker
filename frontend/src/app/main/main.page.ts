@@ -22,6 +22,10 @@ export class MainPage implements OnInit {
   hide3: boolean;
   btnDisabled: boolean;
 
+  hideSport: boolean;
+  hideSportChallenges: boolean;
+  hideSportFeed: boolean;
+
   homeStayNo: any;
   homeOfficeNo: any;
 
@@ -35,6 +39,9 @@ export class MainPage implements OnInit {
     this.hide1 = false;
     this.hide2 = true;
     this.hide3 = true;
+    this.hideSport = true;
+    this.hideSportChallenges = true;
+    this.hideSportFeed = true;
   }
 
   ngOnInit() { Vis.draw(); }
@@ -116,27 +123,51 @@ export class MainPage implements OnInit {
     window.location.reload();
     if (this.state !== 1) {
       this.state = 1;
+      this.hideAll();
       this.hide1 = false;
-      this.hide2 = true;
-      this.hide3 = true;
     }
   }
 
   showSocial() {
     if (this.state !== 2) {
       this.state = 2;
-      this.hide1 = true;
+      this.hideAll();
       this.hide2 = false;
-      this.hide3 = true;
     }
   }
 
   showRanking() {
     if (this.state !== 3) {
       this.state = 3;
-      this.hide1 = true;
-      this.hide2 = true;
+      this.hideAll();
       this.hide3 = false;
     }
+  }
+
+  showSports() {
+    this.state = 0;
+    this.hideAll();
+    this.hideSport = false;
+  }
+
+  showChallenges() {
+    this.state = 0;
+    this.hideAll();
+    this.hideSportChallenges = false;
+  }
+
+  showSportFeed() {
+    this.state = 0;
+    this.hideAll();
+    this.hideSportFeed = false;
+  }
+
+  hideAll() {
+    this.hide1 = true;
+    this.hide2 = true;
+    this.hide3 = true;
+    this.hideSport = true;
+    this.hideSportChallenges = true;
+    this.hideSportFeed = true;
   }
 }
