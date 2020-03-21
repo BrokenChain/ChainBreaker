@@ -10,16 +10,25 @@ import * as Vis from './map_vis';
 export class MainPage implements OnInit {
   @ViewChild('lineChart', null) lineChart;
   @ViewChild('pieChart', null) pieChart;
+  @ViewChild('homeStay', null) homeStay;
+  @ViewChild('homeOffice', null) homeOffice;
 
   state: any; // flags for displaying according page: 1: stats, 2: sociol, 3: profile
   hide1: boolean;
   hide2: boolean;
   hide3: boolean;
+  btnDisabled: boolean;
+
+  homeStayNo: any;
+  homeOfficeNo: any;
 
   pie: any;
   line: any;
   colorArray: any;
   constructor() {
+    this.homeStayNo = 30212;
+    this.homeOfficeNo = 10.231;
+    this.btnDisabled = false;
     this.hide1 = false;
     this.hide2 = true;
     this.hide3 = true;
@@ -37,6 +46,18 @@ export class MainPage implements OnInit {
     for (let i = 0; i < num; i++) {
       this.colorArray.push('#' + Math.floor(Math.random() * 16777215).toString(16));
     }
+  }
+
+  incrementHomeOffice() {
+    this.homeOfficeNo++;
+    //this.homeOffice.innerHTML = '10.232';
+    this.btnDisabled = true;
+  }
+
+  incrementHomeStay() {
+    this.homeStayNo++;
+    //this.homeStay.innerHtml = '30.213';
+    this.btnDisabled = true;
   }
 
   createPieChart() {

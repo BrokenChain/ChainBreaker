@@ -14,12 +14,11 @@ export function draw() {
     // Create map instance
     let chart = am4core.create('chartdiv', am4maps.MapChart);
 
-    chart.width = am4core.percent(100);
-    chart.height = am4core.percent(100);
     chart.titles.create().text = title;
 
     // Set map definition
-    chart.geodataSource.url = '../../assets/germanyLow.json'
+    chart.geodataSource.url = '../../assets/germanyLow.json';
+
 // tslint:disable-next-line:only-arrow-functions
     chart.geodataSource.events.on('parseended', function(ev) {
         let data = [];

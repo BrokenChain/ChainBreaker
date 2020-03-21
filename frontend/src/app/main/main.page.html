@@ -56,9 +56,9 @@
     <ion-card class="news">
       <ion-row>
         <ion-col col-4>
-          <ion-card>
+          <ion-card color="success" style="color: DarkGreen">
             <ion-card-header>
-              <ion-card-title>30.212</ion-card-title>
+              <ion-card-title #homeStay>{{homeStayNo}}</ion-card-title>
               <ion-card-subtitle>Zu Hause</ion-card-subtitle>
             </ion-card-header>
           </ion-card>
@@ -66,20 +66,27 @@
 
         <ion-col col-4>
           <ion-card>
-            <ion-card-header>
-              <ion-card-title>30.212</ion-card-title>
-              <ion-card-subtitle>Zu Hause</ion-card-subtitle>
+            <ion-card-header color="warning">
+              <ion-card-title #homeOffice>{{homeOfficeNo}}</ion-card-title>
+              <ion-card-subtitle>Home Office</ion-card-subtitle>
             </ion-card-header>
           </ion-card>
         </ion-col>
       </ion-row>
       <ion-card-header>
-        <ion-card-subtitle>News</ion-card-subtitle>
-        <ion-card-title>Current stats</ion-card-title>
+        <ion-card-title>Newsticker</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        We live in a society. This app is awesome. I need to find some words to fill this test so the card view gets bigger and so on and so on blablablaabl
+        <label style="color: MediumSeaGreen">16.47</label> - In Polen findet Alkohol, der bei Razzien, beschlagnahmt wurde, in der Virus-Krise eine neue Verwendung.
       </ion-card-content>
+      <ion-card-content>
+        <label style="color: MediumSeaGreen">16.45</label> - Spanien baut ein Konferenzzentrum in Madrid zu einem großen Militärzarett um.
+      </ion-card-content>
+      <h2 style="margin-left: 15px">Heute bin ich ...</h2>
+      <div style="margin-left: 15px">
+        <ion-button size="default" (click)="incrementHomeStay()" color="success" [disabled]="btnDisabled">Zu Hause</ion-button>
+        <ion-button size="default" (click)="incrementHomeOffice()" color="medium" [disabled]="btnDisabled">Home Office</ion-button>
+      </div>
     </ion-card>
   </ion-router-outlet>
 
