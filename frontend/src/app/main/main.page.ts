@@ -162,8 +162,6 @@ export class MainPage implements OnInit {
       this.hideAll();
       this.hide2 = false;
 
-      let a = document.getElementById("glow1");
-      a.style = "animation: glow 1s infinite alternate;"
     }
   }
 
