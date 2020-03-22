@@ -4,6 +4,8 @@ import * as Vis from './map_vis';
 import {NavController} from "@ionic/angular";
 import { AlertController} from '@ionic/angular';
 import { AnimationController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-main',
@@ -15,6 +17,9 @@ export class MainPage implements OnInit {
   @ViewChild('pieChart', null) pieChart;
   @ViewChild('homeStay', null) homeStay;
   @ViewChild('homeOffice', null) homeOffice;
+
+
+  finish = "Du hast das erledigt. Hol jetzt deine Punkte ab!"
 
   homeOfficeButtonColor = 'warning';
   chart: any;
@@ -43,7 +48,7 @@ export class MainPage implements OnInit {
   pie: any;
   line: any;
   colorArray: any;
-  constructor(public navCtrl: NavController, public alertController: AlertController, private animationCtrl: AnimationController) {
+  constructor(public navCtrl: NavController, public toastController: ToastController, public alertController: AlertController, private animationCtrl: AnimationController) {
     this.userScore = 1980
     this.homeStayNo = 30212;
     this.homeOfficeNo = 10231;
@@ -64,18 +69,18 @@ export class MainPage implements OnInit {
   }
 
 
-  ionViewWillLeave() {
-    this.chart.dispose();
+  ngOnInit(): void {
   }
 
-  ngOnInit() {
-
+  ionViewWillLeave() {
+    this.chart.dispose();
   }
 
   ionViewDidEnter() {
     this.chart = Vis.draw('chartdiv');
     this.createLineChart();
     this.createPieChart();
+    this.presentToast();
   }
 
   generateColorArray(num) {
@@ -145,6 +150,14 @@ export class MainPage implements OnInit {
         }
       }
     });
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: "Du kannst Punkte abholen!",
+      duration: 2000
+    });
+    toast.present();
   }
 
   showStats() {
@@ -243,6 +256,7 @@ export class MainPage implements OnInit {
   }
 
   async getCredits() {
+    this.finish = "";
     const alert = await this.alertController.create({
       header: 'Super!',
       message: 'Danke und mach weiter so!',

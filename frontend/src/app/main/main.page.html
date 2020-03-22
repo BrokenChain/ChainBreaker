@@ -331,10 +331,11 @@
       </ion-row>
     </div>
      <div class="flex-container" *ngIf="!this.eldery">
-        <div class="card">
+        <div (click)="getCredits()" class="card">
           <img src="../../assets/imgs/elderly.png" alt="Workouts" style="width:100%">
           <div class="container">
             <h4><b>Unterhaching</b></h4>
+            <p style="color: green">{{finish}}</p>
             <p>65 Punkte: Klick hier und du bekommst per eMail einen Auftrag!</p>
 
           </div>
@@ -366,7 +367,6 @@
             </div>
           </div>
       </div>
-  
 
     <ion-content style="padding-top: 0px" *ngIf="!this.hide3">
       <app-ranking></app-ranking>
@@ -375,7 +375,7 @@
         <ion-col col-4>
           <ion-card (click)="buy(500)">
             <img src="../../assets/imgs/fitx.jpg">
-            <ion-card-subtitle style="margin: 5px">FitX Gutschein im wert von 15€</ion-card-subtitle>
+            <ion-card-subtitle style="margin: 5px">FitX Gutschein</ion-card-subtitle>
             <ion-card-content style="text-align: center">500 P.</ion-card-content>
           </ion-card>
         </ion-col>
