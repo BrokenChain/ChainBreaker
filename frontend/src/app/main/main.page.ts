@@ -201,16 +201,19 @@ export class MainPage implements OnInit {
   }
 
   showSocialCommitment() {
+    this.state = 0;
     this.hideAll();
     this.social = false;
   }
 
   showElderly() {
+    this.state = 0;
     this.hideAll();
     this.eldery = false;
   }
 
   showHomeless() {
+    this.state = 0;
     this.hideAll();
     this.homeless = false;
   }

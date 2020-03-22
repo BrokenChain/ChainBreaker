@@ -280,51 +280,75 @@
     </div>
 
       <!-- Socla Commitment Cards -->
-      <div class="flex-container" *ngIf="!this.social">
-          <div class="card">
-            <img src="../../assets/imgs/elderly.png" alt="Workouts" style="width:100%">
-            <div class="container" (click)="showElderly()">
-              <h4><b>Shopping</b></h4> 
-              <p>Hilf Älteren Menschen in deiner Nähe mit dem Einkauf!</p> 
-            </div>
-          </div>
-          <div class="card">
-            <img src="../../assets/imgs/homeless.png" alt="Feed" style="width:100%">
-            <div class="container" (click)="showHomeless()">
-              <h4><b>Obdachlose</b></h4> 
-              <p>Hilf Menschen in der schwierigen Zeit!</p> 
-            </div>
+    <div *ngIf="!this.social" class="rubrik-header">
+      <ion-row>
+        <ion-button class="stayr-icon back-button" fill="clear">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+        <h1>Soziales Engagement</h1>
+      </ion-row>
+    </div>
+    <div class="flex-container" *ngIf="!this.social">
+        <div class="card">
+          <img src="../../assets/imgs/elderly.png" alt="Workouts" style="width:100%">
+          <div class="container" (click)="showElderly()">
+            <h4><b>Shopping</b></h4>
+            <p>Hilf Älteren Menschen in deiner Nähe mit dem Einkauf!</p>
           </div>
         </div>
+        <div class="card">
+          <img src="../../assets/imgs/homeless.png" alt="Feed" style="width:100%">
+          <div class="container" (click)="showHomeless()">
+            <h4><b>Obdachlose</b></h4>
+            <p>Hilf Menschen in der schwierigen Zeit!</p>
+          </div>
+        </div>
+    </div>
 
-         <!-- Elderly Cards -->
-         <div class="flex-container" *ngIf="!this.eldery">
-            <div class="card">
-              <img src="../../assets/imgs/elderly.png" alt="Workouts" style="width:100%">
-              <div class="container">
-                <h4><b>Shopping</b></h4> 
-                <p>65 Punkte: Klick hier und du bekommst per eMail einen Auftrag!</p> 
-              </div>
+     <!-- Elderly Cards -->
+    <div *ngIf="!this.eldery" class="rubrik-header">
+      <ion-row>
+        <ion-button class="stayr-icon back-button" fill="clear">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+        <h1>Shopping</h1>
+      </ion-row>
+    </div>
+     <div class="flex-container" *ngIf="!this.eldery">
+        <div class="card">
+          <img src="../../assets/imgs/elderly.png" alt="Workouts" style="width:100%">
+          <div class="container">
+            <h4><b>Unterhaching</b></h4>
+            <p>65 Punkte: Klick hier und du bekommst per eMail einen Auftrag!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Elderly Cards -->
+    <div *ngIf="!this.homeless" class="rubrik-header">
+      <ion-row>
+        <ion-button class="stayr-icon back-button" fill="clear">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+        <h1>Helfe Obdachlosen</h1>
+      </ion-row>
+    </div>
+     <div class="flex-container" *ngIf="!this.homeless">
+        <div class="card">
+          <img src="../../assets/imgs/homeless.png" alt="Workouts" style="width:100%">
+          <div class="container">
+            <h4><b>Hilfe im Heim</b></h4>
+            <p>85 Punkte: Klick hier und du bekommst per eMail einen Auftrag!</p>
+          </div>
+        </div>
+        <div class="card">
+            <img src="../../assets/imgs/homeless_help.png" alt="Workouts" style="width:100%">
+            <div class="container">
+              <h4><b>Spende Geld</b></h4>
+              <p>125 Punkte: Klick hier und du kommst zu unseren Partnern!!</p>
             </div>
           </div>
-
-          <!-- Elderly Cards -->
-         <div class="flex-container" *ngIf="!this.homeless">
-            <div class="card">
-              <img src="../../assets/imgs/homeless.png" alt="Workouts" style="width:100%">
-              <div class="container">
-                <h4><b>Hilfe im Heim</b></h4> 
-                <p>85 Punkte: Klick hier und du bekommst per eMail einen Auftrag!</p> 
-              </div>
-            </div>
-            <div class="card">
-                <img src="../../assets/imgs/homeless_help.png" alt="Workouts" style="width:100%">
-                <div class="container">
-                  <h4><b>Spende Geld</b></h4> 
-                  <p>125 Punkte: Klick hier und du kommst zu unseren Partnern!!</p> 
-                </div>
-              </div>
-          </div>
+      </div>
   
 
     <ion-content *ngIf="!this.hide3">
