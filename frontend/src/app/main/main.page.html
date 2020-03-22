@@ -8,7 +8,8 @@
         </div>
         <div class="profile_info">
           <h3>Julie</h3>
-          1980 P.
+          <h5>{{userScore}} P.</h5>
+          <ion-icon name="medal-outline"></ion-icon><ion-icon name="thumbs-up-outline"></ion-icon>
         </div>
       </ion-col>
       <ion-col>
@@ -49,7 +50,7 @@
           <p>Wie wäre es mit einem Workout für heute?</p>
         </div>
       </div>
-      <div class="card" (click)="showSocialCommitment()">
+      <div class="card glowContainer" (click)="showSocialCommitment()">
         <img src="../../assets/imgs/social.png" alt="Social Commitment" style="width:100%">
         <div class="container">
           <h4><b>Soziales Engagement</b></h4>
@@ -301,6 +302,7 @@
           <div class="container" (click)="showHomeless()">
             <h4><b>Obdachlose</b></h4>
             <p>Hilf Menschen in der schwierigen Zeit!</p>
+
           </div>
         </div>
       <div class="card">
@@ -334,6 +336,7 @@
           <div class="container">
             <h4><b>Unterhaching</b></h4>
             <p>65 Punkte: Klick hier und du bekommst per eMail einen Auftrag!</p>
+
           </div>
         </div>
       </div>
@@ -365,8 +368,42 @@
       </div>
   
 
-    <ion-content *ngIf="!this.hide3">
+    <ion-content style="padding-top: 0px" *ngIf="!this.hide3">
       <app-ranking></app-ranking>
+      <h4 style="margin: 5px">Punkte gegen Prämien eintauschen</h4>
+      <ion-row style="margin: 0px">
+        <ion-col col-4>
+          <ion-card (click)="buy(500)">
+            <img src="../../assets/imgs/fitx.jpg">
+            <ion-card-subtitle style="margin: 5px">FitX Gutschein im wert von 15€</ion-card-subtitle>
+            <ion-card-content style="text-align: center">500 P.</ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card (click)="buy(250)">
+            <img src="../../assets/imgs/yoga.jpg">
+            <ion-card-subtitle style="margin: 5px">Yogarkurs</ion-card-subtitle>
+            <ion-card-content style="text-align: center">250 P.</ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <ion-card (click)="buy(150)">
+            <img src="../../assets/imgs/lama.jpg">
+            <ion-card-subtitle style="margin: 5px">Lama wandern</ion-card-subtitle>
+            <ion-card-content style="text-align: center">150 P.</ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card (click)="buy(400)">
+            <img src="../../assets/imgs/kochen.jpg">
+            <ion-card-subtitle style="margin: 5px">Kochkurs</ion-card-subtitle>
+            <ion-card-content style="text-align: center">400 P.</ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
     </ion-content>
 
     <ion-row>
@@ -454,7 +491,7 @@
       <h2 style="margin-left: 15px">Heute bin ich ...</h2>
       <div style="margin-left: 15px">
         <ion-button size="default" (click)="incrementHomeStay()" color="success" [disabled]="btnDisabled">Zu Hause</ion-button>
-        <ion-button size="default" (click)="incrementHomeOffice()" color="medium" [disabled]="btnDisabled">Home Office</ion-button>
+        <ion-button size="default" (click)="incrementHomeOffice()" [color]="homeOfficeButtonColor" [disabled]="btnDisabled">Home Office</ion-button>
       </div>
     </ion-card>
   </ion-router-outlet>
