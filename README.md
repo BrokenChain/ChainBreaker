@@ -12,3 +12,4 @@ Welcome to the ChainBreaker Repo!
 `cd backend`
 `python main.py`
 
+Please also visit our Wiki (german)!!!!
