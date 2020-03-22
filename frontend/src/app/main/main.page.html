@@ -14,7 +14,7 @@
       <ion-col>
         <div class="ion-text-end logout-button">
           <ion-button (click)="logout()" fill="clear">
-            <ion-icon name="log-out" class="logout-icon"></ion-icon>
+            <ion-icon name="log-out" class="stayr-icon"></ion-icon>
           </ion-button>
         </div>
       </ion-col>
@@ -66,11 +66,19 @@
     </div>
 
     <!-- Sport Cards -->
+    <div *ngIf="!this.hideSport">
+      <ion-row>
+        <ion-button class="stayr-icon back-button" fill="clear">
+          <ion-icon name="arrow-back" class="stayr-icon"></ion-icon>
+        </ion-button>
+        <h1>Sport</h1>
+      </ion-row>
+    </div>
     <div class="flex-container" *ngIf="!this.hideSport">
       <div class="card">
         <img src="../../assets/imgs/homeworkout.png" alt="Workouts" style="width:100%">
         <div class="container" (click)="showChallenges()">
-          <h4><b>Sport</b></h4> 
+          <h4><b>Stay Fit</b></h4>
           <p>Zu deinen Workouts & Challenges!</p> 
         </div>
       </div>
@@ -84,6 +92,14 @@
     </div>
 
     <!-- Sport Challenges Cards -->
+    <div *ngIf="!this.hideSportChallenges">
+      <ion-row>
+        <ion-button class="stayr-icon back-button" fill="clear">
+          <ion-icon name="arrow-back" class="stayr-icon"></ion-icon>
+        </ion-button>
+        <h1>Stay Fit</h1>
+      </ion-row>
+    </div>
     <div class="flex-container" *ngIf="!this.hideSportChallenges">
       <div class="card">
         <img src="../../assets/imgs/homeworkout.png" alt="Workouts" style="width:100%">
@@ -102,19 +118,30 @@
     </div>
 
     <!-- Sport Feed Cards -->
+    <div *ngIf="!this.hideSportFeed" class="rubrik-header">
+      <ion-row>
+        <ion-button class="stayr-icon back-button" fill="clear">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+        <h1>Sport Feed</h1>
+      </ion-row>
+    </div>
     <div class="flex-column" *ngIf="!this.hideSportFeed">
       <ion-card>
         <button>
           <ion-item class="highlight">
             <ion-thumbnail slot="start">
               <img src="../../assets/imgs/profile-pictures/man.png">
+              <ion-label align="center">
+                <h2 class="username">tobias</h2>
+              </ion-label>
             </ion-thumbnail>
-            <ion-label>
-              <h2 class="username">tobias</h2>
-            </ion-label>
             <div class="flex-column">
             <p style="color:steelblue;">Wie trainiere ich richtig Bauchmuskeln?</p>
-            <div class="flex-row"><ion-icon style="left: 0" name="logo-twitch"></ion-icon><p class="message"> 850 Kommentare</p></div>
+            <div class="flex-row">
+              <ion-icon style="left: 0" name="logo-twitch" class="icon-comments"></ion-icon>
+              <p class="message"> 85 Kommentare</p>
+            </div>
           </div>
           </ion-item>
         </button>
@@ -124,13 +151,16 @@
           <ion-item class="highlight">
             <ion-thumbnail slot="start">
               <img src="../../assets/imgs/profile-pictures/girl2.png">
+              <ion-label align="center">
+                <h2 class="username">Du</h2>
+              </ion-label>
             </ion-thumbnail>
-            <ion-label>
-              <h2 class="username">Du</h2>
-            </ion-label>
             <div class="flex-column">
               <p style="color:steelblue;">Hat wer einen coolen Homeworkout-Plan für mich?</p>
-              <div class="flex-row"><ion-icon style="left: 0" name="logo-twitch"></ion-icon><p class="message"> 3 Kommentare</p></div>
+              <div class="flex-row">
+                <ion-icon style="left: 0" name="logo-twitch" class="icon-comments"></ion-icon>
+                <p class="message"> 3 Kommentare</p>
+              </div>
             </div>
           </ion-item>
         </button>
@@ -140,13 +170,16 @@
           <ion-item class="highlight">
             <ion-thumbnail  slot="start">
               <img src="../../assets/imgs/profile-pictures/boy.png">
+              <ion-label align="center">
+                <h2 class="username">kimk</h2>
+              </ion-label>
             </ion-thumbnail>
-            <ion-label>
-              <h2 class="username">kimk</h2>
-            </ion-label>
             <div class="flex-column">
             <p style="color:steelblue;">Wie findet ihr Daniel Aminatis Training?</p>
-            <div class="flex-row"><ion-icon style="left: 0" name="logo-twitch"></ion-icon><p class="message"> 9945 Kommentare</p></div>
+            <div class="flex-row">
+              <ion-icon style="left: 0" name="logo-twitch" class="icon-comments"></ion-icon>
+              <p class="message"> 945 Kommentare</p>
+            </div>
           </div>
           </ion-item>
         </button>

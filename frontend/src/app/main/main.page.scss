@@ -25,7 +25,7 @@
   height: 90%;
 }
 
-.logout-icon {
+.stayr-icon {
   color: #00b0b0;
 }
 
@@ -107,10 +107,23 @@
   height: 10%;
 }
 
-ion-list {
+.ion-list {
   overflow: hidden;
   overflow-y: auto;
   ::-webkit-scrollbar {
     display: none;
   }
+}
+
+.rubrik-header {
+  padding: 0;
+}
+
+.back-button{
+  zoom: 1.5;
+}
+
+.icon-comments {
+  zoom: 1.6;
+  bottom: 0;
 }
