@@ -25,7 +25,7 @@
   height: 90%;
 }
 
-.logout-icon {
+.stayr-icon {
   color: #00b0b0;
 }
 
@@ -105,4 +105,42 @@
   to {
     box-shadow: 0 0 5px 5px #7cf2b3;
   }
+}
+
+.feed-question {
+  top: 0px;
+}
+
+.feed-comment {
+  padding: 10px;
+}
+
+.user-data {
+  width: 10%;
+  height: 10%;
+}
+
+.ion-list {
+  overflow: hidden;
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.rubrik-header {
+  padding: 0;
+}
+
+.back-button{
+  zoom: 1.5;
+}
+
+.icon-comments {
+  zoom: 1.6;
+  bottom: 0;
+}
+
+.question {
+  padding-top: 20px;
 }

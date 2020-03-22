@@ -15,7 +15,7 @@
       <ion-col>
         <div class="ion-text-end logout-button">
           <ion-button (click)="logout()" fill="clear">
-            <ion-icon name="log-out" class="logout-icon"></ion-icon>
+            <ion-icon name="log-out" class="stayr-icon"></ion-icon>
           </ion-button>
         </div>
       </ion-col>
@@ -67,11 +67,19 @@
     </div>
 
     <!-- Sport Cards -->
+    <div *ngIf="!this.hideSport">
+      <ion-row>
+        <ion-button class="stayr-icon back-button" fill="clear">
+          <ion-icon name="arrow-back" class="stayr-icon"></ion-icon>
+        </ion-button>
+        <h1>Sport</h1>
+      </ion-row>
+    </div>
     <div class="flex-container" *ngIf="!this.hideSport">
       <div class="card">
         <img src="../../assets/imgs/homeworkout.png" alt="Workouts" style="width:100%">
         <div class="container" (click)="showChallenges()">
-          <h4><b>Sport</b></h4> 
+          <h4><b>Stay Fit</b></h4>
           <p>Zu deinen Workouts & Challenges!</p> 
         </div>
       </div>
@@ -85,6 +93,14 @@
     </div>
 
     <!-- Sport Challenges Cards -->
+    <div *ngIf="!this.hideSportChallenges">
+      <ion-row>
+        <ion-button class="stayr-icon back-button" fill="clear">
+          <ion-icon name="arrow-back" class="stayr-icon"></ion-icon>
+        </ion-button>
+        <h1>Stay Fit</h1>
+      </ion-row>
+    </div>
     <div class="flex-container" *ngIf="!this.hideSportChallenges">
       <div class="card">
         <img src="../../assets/imgs/homeworkout.png" alt="Workouts" style="width:100%">
@@ -103,50 +119,166 @@
     </div>
 
     <!-- Sport Feed Cards -->
+    <div *ngIf="!this.hideSportFeed" class="rubrik-header">
+      <ion-row>
+        <ion-button class="stayr-icon back-button" fill="clear">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+        <h1>Sport Feed</h1>
+      </ion-row>
+    </div>
     <div class="flex-column" *ngIf="!this.hideSportFeed">
-        <ion-card>
-            <ion-item class="highlight">
-              <ion-thumbnail  slot="start">
-                <img src="../../assets/imgs/profile-pictures/girl2.png">
-              </ion-thumbnail>
-              <ion-label>
+      <ion-card>
+        <button>
+          <ion-item class="highlight">
+            <ion-thumbnail slot="start">
+              <img src="../../assets/imgs/profile-pictures/man.png">
+              <ion-label align="center">
+                <h2 class="username">tobias</h2>
+              </ion-label>
+            </ion-thumbnail>
+            <div class="flex-column">
+            <p style="color:steelblue;">Wie trainiere ich richtig Bauchmuskeln?</p>
+            <div class="flex-row">
+              <ion-icon style="left: 0" name="logo-twitch" class="icon-comments"></ion-icon>
+              <p class="message"> 85 Kommentare</p>
+            </div>
+          </div>
+          </ion-item>
+        </button>
+      </ion-card>
+      <ion-card>
+        <button (click)="showSportFeed2()">
+          <ion-item class="highlight">
+            <ion-thumbnail slot="start">
+              <img src="../../assets/imgs/profile-pictures/girl2.png">
+              <ion-label align="center">
                 <h2 class="username">Du</h2>
               </ion-label>
-              <div class="flex-column">
-                <p style="color:steelblue;">Hat wer einen coolen Homeworkout-Plan für mich?</p>
-                <div class="flex-row"><ion-icon style="left: 0" name="logo-twitch"></ion-icon><p class="message"> 3 Kommentare</p></div>
+            </ion-thumbnail>
+            <div class="flex-column">
+              <p style="color:steelblue;">Hat wer einen coolen Homeworkout-Plan für mich?</p>
+              <div class="flex-row">
+                <ion-icon style="left: 0" name="logo-twitch" class="icon-comments"></ion-icon>
+                <p class="message"> 3 Kommentare</p>
               </div>
-              </ion-item>
-          </ion-card>
-          <ion-card>
-              <ion-item class="highlight">
-                <ion-thumbnail  slot="start">
-                  <img src="../../assets/imgs/profile-pictures/girl2.png">
-                </ion-thumbnail>
-                <ion-label>
-                  <h2 class="username">Du</h2>
-                </ion-label>
-                <div class="flex-column">
-                <p style="color:steelblue;">Wie trainiere ich richtig Bauchmuskeln?</p>
-                <div class="flex-row"><ion-icon style="left: 0" name="logo-twitch"></ion-icon><p class="message"> 850 Kommentare</p></div>
-              </div>
-              </ion-item>
-            </ion-card>
-            <ion-card>
-                <ion-item class="highlight">
-                  <ion-thumbnail  slot="start">
-                    <img src="../../assets/imgs/profile-pictures/girl2.png">
-                  </ion-thumbnail>
-                  <ion-label>
-                    <h2 class="username">Du</h2>
-                  </ion-label>
-                  <div class="flex-column">
-                  <p style="color:steelblue;">Wie findet ihr Daniel Aminatis Training?</p>
-                  <div class="flex-row"><ion-icon style="left: 0" name="logo-twitch"></ion-icon><p class="message"> 9945 Kommentare</p></div>
-                </div>
-                </ion-item>
-              </ion-card>
-      </div>
+            </div>
+          </ion-item>
+        </button>
+      </ion-card>
+      <ion-card>
+        <button>
+          <ion-item class="highlight">
+            <ion-thumbnail  slot="start">
+              <img src="../../assets/imgs/profile-pictures/boy.png">
+              <ion-label align="center">
+                <h2 class="username">kimk</h2>
+              </ion-label>
+            </ion-thumbnail>
+            <div class="flex-column">
+            <p style="color:steelblue;">Wie findet ihr Daniel Aminatis Training?</p>
+            <div class="flex-row">
+              <ion-icon style="left: 0" name="logo-twitch" class="icon-comments"></ion-icon>
+              <p class="message"> 945 Kommentare</p>
+            </div>
+          </div>
+          </ion-item>
+        </button>
+        </ion-card>
+    </div>
+
+
+    <!--show sport feed 2 with comments-->
+    <div *ngIf="!this.hideSportFeed2">
+      <ion-card class="feed-question">
+        <ion-card-content>
+          <h1 style="color:steelblue; font: bold">Hat wer einen coolen Homeworkout-Plan für mich?</h1>
+          <ion-item class="highlight">
+            <ion-thumbnail slot="start" class="user-data">
+              <img src="../../assets/imgs/profile-pictures/girl2.png">
+              <ion-label align="center">
+                <h2 class="username">Du</h2>
+              </ion-label>
+            </ion-thumbnail>
+
+            <div class="question">
+              Hallo, ich möchte in dieser Zeit gerne Sport zuhause machen. Kennt denn jemand einen Homeworkout-Plan,
+              bei dem ich auch motiviert dran bleibe?
+            </div>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      <!--comments-->
+      <ion-card>
+        <ion-card-header>
+          Antworten
+        </ion-card-header>
+        <ion-list (scroll)="true">
+          <ion-item>
+            <ion-thumbnail slot="start" class="user-data">
+              <img src="../../assets/imgs/profile-pictures/girl1.png">
+              <ion-label align="center">
+                <h2 class="username">angie</h2>
+              </ion-label>
+            </ion-thumbnail>
+            <div class="flex-column">
+              Hey Julie, wonach genau suchst du denn?
+            </div>
+          </ion-item>
+
+          <ion-item>
+            <ion-thumbnail slot="start" class="user-data">
+              <img src="../../assets/imgs/profile-pictures/girl2.png">
+              <ion-label align="center">
+                <h2 class="username">Du</h2>
+              </ion-label>
+            </ion-thumbnail>
+            <div class="flex-column">
+              Ich möchte gerne Bauch und Beine trainieren, kennst du da ein gutes Programm?
+            </div>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail slot="start" class="user-data">
+              <img src="../../assets/imgs/profile-pictures/girl1.png">
+              <ion-label align="center">
+                <h2 class="username">angie</h2>
+              </ion-label>
+            </ion-thumbnail>
+            <div class="flex-column" class="feed-comment">
+              Unter Sport findest du Challenges für Bauch und Beine,
+              die über 12 Wochen gehen, da bleibst du sicher fit ;) Habe die Challenge "Fit with Amanda" gemacht, das kann
+              ich nur empfehlen!
+            </div>
+          </ion-item>
+
+          <ion-item *ngIf="!hideCommentOnSportFeed2">
+            <ion-thumbnail slot="start" class="user-data">
+              <img src="../../assets/imgs/profile-pictures/girl2.png">
+              <ion-label align="center">
+                <h2 class="username">Du</h2>
+              </ion-label>
+            </ion-thumbnail>
+            <div class="flex-column">
+              {{newCommentDisplay}}
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+
+      <!--new comment-->
+      <ion-card>
+        <ion-card-header>
+          Dein Kommentar
+        </ion-card-header>
+        <ion-card-content>
+          <ion-textarea placeholder="Schreib etwas.." [(ngModel)]="newComment" clear-on-edit="true"></ion-textarea>
+        </ion-card-content>
+        <ion-button (click)="showNewCommentOnSportFeed2()">
+          Abschicken
+        </ion-button>
+      </ion-card>
+    </div>
 
       <!-- Socla Commitment Cards -->
       <div class="flex-container" *ngIf="!this.social">

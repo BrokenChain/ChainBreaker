@@ -1,7 +1,15 @@
-Backend: Python Flask, pipenv als virtual environment
-Server: `python3 backend/server.py`
+Welcome to the ChainBreaker Repo!
 
+# Development Setup
+`npm install -g @ionic/cli`
+`npm install`
 
-Frontend: Ionic Angular
-App starten in frontend/: `ionic serve`  
-test
+## Start the web app
+`cd frontend`
+`ionic serve`
+
+## Start the server
+`cd backend`
+`python main.py`
+
+Please also visit our Wiki (german)!!!!

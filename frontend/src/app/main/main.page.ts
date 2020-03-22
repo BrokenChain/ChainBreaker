@@ -27,6 +27,10 @@ export class MainPage implements OnInit {
   hideSport: boolean;
   hideSportChallenges: boolean;
   hideSportFeed: boolean;
+  hideSportFeed2: boolean;
+  hideCommentOnSportFeed2: boolean;
+  newComment: string;
+  newCommentDisplay: string;
 
   homeStayNo: any;
   homeOfficeNo: any;
@@ -50,9 +54,13 @@ export class MainPage implements OnInit {
     this.hideSport = true;
     this.hideSportChallenges = true;
     this.hideSportFeed = true;
+    this.hideSportFeed2 = true;
     this.social = true;
     this.eldery = true;
     this.homeless = true;
+    this.hideCommentOnSportFeed2 = true;
+    this.newComment = '';
+    this.newCommentDisplay = '';
   }
 
 
@@ -185,6 +193,21 @@ export class MainPage implements OnInit {
     this.hideSportFeed = false;
   }
 
+  showSportFeed2() {
+    this.state = 0;
+    this.hideAll();
+    this.hideSportFeed2 = false;
+  }
+
+  showNewCommentOnSportFeed2() {
+    this.state = 0;
+    this.hideAll();
+    this.hideSportFeed2 = false;
+    this.hideCommentOnSportFeed2 = false;
+    this.newCommentDisplay = this.newComment;
+    this.newComment = '';
+  }
+
   showSocialCommitment() {
     this.hideAll();
     this.social = false;
@@ -210,6 +233,8 @@ export class MainPage implements OnInit {
     this.social = true;
     this.eldery = true;
     this.homeless = true;
+    this.hideSportFeed = true;
+    this.hideSportFeed2 = true;
   }
 
   logout()  {
