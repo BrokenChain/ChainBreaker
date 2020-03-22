@@ -303,6 +303,20 @@
             <p>Hilf Menschen in der schwierigen Zeit!</p>
           </div>
         </div>
+      <div class="card">
+        <img src="../../assets/imgs/arzt.png" alt="Workouts" style="width:100%">
+        <div class="container" (click)="showElderly()">
+          <h4><b>Pflege ohne Grenzen</b></h4>
+          <p>Hilf Ärzte und Pfleger mit Spenden und verdiene Punkte!</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../../assets/imgs/Gastro.png" alt="Feed" style="width:100%">
+        <div class="container" (click)="showHomeless()">
+          <h4><b>Gastronomie</b></h4>
+          <p>Hilf durch Jobben oder Spenden und verdiene Punkte!</p>
+        </div>
+      </div>
     </div>
 
      <!-- Elderly Cards -->
@@ -381,6 +395,11 @@
         </ion-card>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <div class="flaticon">
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      </div>
+    </ion-row>
   </ion-menu>
 
   <!-- the main content -->
@@ -439,6 +458,5 @@
       </div>
     </ion-card>
   </ion-router-outlet>
-
 </ion-split-pane>
 <ion-menu-button>
