@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 import * as Vis from './map_vis';
 import {NavController} from "@ionic/angular";
+import { AlertController} from '@ionic/angular';
+import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-main',
@@ -13,8 +15,8 @@ export class MainPage implements OnInit {
   @ViewChild('pieChart', null) pieChart;
   @ViewChild('homeStay', null) homeStay;
   @ViewChild('homeOffice', null) homeOffice;
-  @ViewChild('sideMenu', null) sideMenu;
 
+  homeOfficeButtonColor = 'warning';
   chart: any;
   state: any; // flags for displaying according page: 1: stats, 2: social, 3: profile
   hide1: boolean;
@@ -29,6 +31,7 @@ export class MainPage implements OnInit {
   homeStayNo: any;
   homeOfficeNo: any;
 
+  userScore: number;
   social: boolean;
   eldery: boolean;
   homeless: boolean;
@@ -36,7 +39,8 @@ export class MainPage implements OnInit {
   pie: any;
   line: any;
   colorArray: any;
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public alertController: AlertController, private animationCtrl: AnimationController) {
+    this.userScore = 1980
     this.homeStayNo = 30212;
     this.homeOfficeNo = 10231;
     this.btnDisabled = false;
@@ -76,6 +80,7 @@ export class MainPage implements OnInit {
   incrementHomeOffice() {
     this.homeOfficeNo++;
     this.btnDisabled = true;
+    this.homeOfficeButtonColor = 'medium';
   }
 
   incrementHomeStay() {
@@ -148,6 +153,9 @@ export class MainPage implements OnInit {
       this.state = 2;
       this.hideAll();
       this.hide2 = false;
+
+      let a = document.getElementById("glow1");
+      a.style = "animation: glow 1s infinite alternate;"
     }
   }
 
@@ -207,5 +215,68 @@ export class MainPage implements OnInit {
   logout()  {
     this.navCtrl.navigateForward('login');
   }
+
+  async getCredits() {
+    const alert = await this.alertController.create({
+      header: 'Super!',
+      message: 'Danke und mach weiter so!',
+      buttons: [
+        {
+          text: 'Okay',
+          handler: () => {
+            let tmp = this.userScore + 65;
+            let interval = setInterval(() => {
+              this.userScore++;
+              if (this.userScore === tmp) {
+                clearInterval(interval);
+              }
+            },30);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async buy(price) {
+    const alert = await this.alertController.create({
+      header: 'Bist du dir sicher?',
+      message: 'Willst du für ' + price + 'P. diese Prämie eintauschen?',
+      buttons: [
+        {
+          text: 'Ja',
+          handler: () => {
+            this.presentAlert();
+            let tmp = this.userScore - 500;
+            let interval = setInterval(() => {
+              this.userScore--;
+              if (this.userScore === tmp) {
+                clearInterval(interval);
+              }
+            },10);
+          }
+        },
+        {
+          text: "Nein",
+          handler: () => {
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Viel Spaß!',
+      message: 'Du solltest bald eine E-Mail erhalten.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
 }
 
